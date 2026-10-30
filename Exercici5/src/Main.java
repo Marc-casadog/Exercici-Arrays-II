@@ -1,60 +1,43 @@
-package exercici5;
+package exercici1;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-    Scanner sc = new Scanner(System.in);
+        System.out.println("Introdueix el nombre de files:");
+        int n = sc.nextInt();
 
-    int[][] matriz = new int[20][6];
+        System.out.println("Introdueix el nombre de columnes:");
+        int m = sc.nextInt();
 
-    // Introduir les 3 notes de cada alumne
-    for (int i = 0; i < 20; i++) {
+        int[][] matriu =  new int[n][m];
+        int[] sumes = new int[m];
 
-        for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < matriu.length; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.println("Introdueix un número a la fila:" + i + ", columna " + j + ":");
+                matriu[i][j] = sc.nextInt();
 
-            System.out.println("Introduce la nota " + (j + 1) + " del alumno " + (i + 1) + ":");
-            matriz[i][j] = sc.nextInt();
-
-        }
-    }
-
-    //  Calcular mitja, nota màxima y nota mínima
-    for (int i = 0; i < 20; i++) {
-
-        int suma = 0;
-        int maximo = matriz[i][0];
-        int minimo = matriz[i][0];
-
-        for (int j = 0; j < 3; j++) {
-
-            suma = suma + matriz[i][j];
-
-            if (matriz[i][j] > maximo) {
-                maximo = matriz[i][j];
             }
 
-            if (matriz[i][j] < minimo) {
-                minimo = matriz[i][j];
+        }
+
+        for (int j = 0; j < m; j++) {
+            sumes[j] = 0;
+
+            for (int i = 0; i < n; i++) {
+                sumes[j] += matriu[i][j];
             }
         }
 
-        matriz[i][3] = suma / 3;
-        matriz[i][4] = maximo;
-        matriz[i][5] = minimo;
-    }
-
-    // C. Mostrar la matriz completa
-    System.out.println("Matriu:");
-
-    for (int i = 0; i < 20; i++) {
-
-        for (int j = 0; j < 6; j++) {
-            System.out.print(matriz[i][j] + "\t");
+        for (int j = 0; j < m; j++) {
+            System.out.println("Suma columna" + j + ":" + sumes[j]);
         }
 
-        System.out.println();
-    }
+
+
+
     }
 }

@@ -1,9 +1,6 @@
-package exercici1;
-
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+void main() {
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Introdueix el nombre de files:");
@@ -39,5 +36,4 @@ public class Main {
 
 
 
-    }
 }
