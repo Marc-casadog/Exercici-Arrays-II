@@ -9,10 +9,16 @@ void main() {
     System.out.println("Introdueix el nombre de columnes:");
     int m = sc.nextInt();
 
-    int[][] matriu = new int[n][m];   // n es fila y m es columna
+    int[][] matriu = new int[n][m * 3];  // n es fila y m es columna
     int[] sumaColumnas = new int[m]; // es crea el vector.
+    int[] valormesalt = new int;
+    int[] valormespetit = new int; 
+    int[] valorscolumna = new int[m];
+    int[] valorsfila = new int[n];
 
-    System.out.println("Matriu:");
+
+
+         System.out.println("Matriu:");
     for (int i = 0; i < matriu.length; i++) {
         for (int j = 0; j < matriu[i].length; j++) {
             System.out.print(matriu[i][j] + "\t");
